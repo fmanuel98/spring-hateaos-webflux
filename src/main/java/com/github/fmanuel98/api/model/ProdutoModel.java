@@ -1,5 +1,7 @@
 package com.github.fmanuel98.api.model;
 
-public class ProdutoModel {
+import org.springframework.hateoas.RepresentationModel;
+
+public class ProdutoModel extends RepresentationModel<ProdutoModel> {
 
 }
