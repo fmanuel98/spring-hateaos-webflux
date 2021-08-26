@@ -8,7 +8,9 @@ Projecto desenvolvido com o objectivo de aprofundar na aplicação de **hateaos*
 ## _Etapas_
 ---
 - [x] **Root EntryPoint**
-- [x] Crud de Produto 
+- [x] Crud de Produto
+ - [] hateoas de recurso de produto
+  - [x] get
 
 
 
