@@ -8,10 +8,10 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.github.fmanuel98</groupId>
-    <artifactId>spring-hateaos-webflux</artifactId>
+    <artifactId>spring-hateoas-webflux</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-hateaos-webflux</name>
-    <description>Api para aprender sobre hateaos e webflux com spring</description>
+    <name>spring-hateoas-webflux</name>
+    <description>Api para aprender sobre hateoas e webflux com spring</description>
     <properties>
         <java.version>11</java.version>
     </properties>

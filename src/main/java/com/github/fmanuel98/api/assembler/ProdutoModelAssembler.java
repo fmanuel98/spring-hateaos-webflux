@@ -1,6 +1,6 @@
 package com.github.fmanuel98.api.assembler;
 
-import com.github.fmanuel98.api.HateaosWebfluxLinks;
+import com.github.fmanuel98.api.HateoasWebfluxLinks;
 import com.github.fmanuel98.api.controllers.ProdutoController;
 import com.github.fmanuel98.api.model.ProdutoModel;
 import com.github.fmanuel98.domain.models.Produto;
@@ -16,7 +16,7 @@ public class ProdutoModelAssembler extends RepresentationModelAssemblerSupport<P
   @Autowired
   private ModelMapper mapper;
   @Autowired
-  private HateaosWebfluxLinks webfluxLinks;
+  private HateoasWebfluxLinks webfluxLinks;
 
   public ProdutoModelAssembler() {
     super(ProdutoController.class, ProdutoModel.class);

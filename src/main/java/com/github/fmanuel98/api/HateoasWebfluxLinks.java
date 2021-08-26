@@ -9,7 +9,7 @@ import org.springframework.hateoas.Link;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HateaosWebfluxLinks {
+public class HateoasWebfluxLinks {
 
   public Link linkToProdutos(String rel) {
     return linkTo(ProdutoController.class).withRel(rel);

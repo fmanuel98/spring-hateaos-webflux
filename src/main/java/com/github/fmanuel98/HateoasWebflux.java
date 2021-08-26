@@ -10,11 +10,11 @@ import java.util.TimeZone;
 
 @SpringBootApplication
 @OpenAPIDefinition(info = @Info(title = "APIs", version = "1.0", description = "Documentation APIs v1.0"))
-public class HateaosWebflux {
+public class HateoasWebflux {
 
 	public static void main(String[] args) {
 		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
-		SpringApplication.run(HateaosWebflux.class, args);
+		SpringApplication.run(HateoasWebflux.class, args);
 	}
 
 }

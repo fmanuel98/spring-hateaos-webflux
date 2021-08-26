@@ -1,6 +1,6 @@
 package com.github.fmanuel98.api.controllers;
 
-import com.github.fmanuel98.api.HateaosWebfluxLinks;
+import com.github.fmanuel98.api.HateoasWebfluxLinks;
 
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @AllArgsConstructor
 public class RootEntryPointController {
-  private HateaosWebfluxLinks links;
+  private HateoasWebfluxLinks links;
 
   @GetMapping
   public RootEntryPointModel root() {
