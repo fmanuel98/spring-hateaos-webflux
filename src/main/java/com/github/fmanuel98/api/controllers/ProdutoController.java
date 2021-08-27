@@ -6,7 +6,6 @@ import com.github.fmanuel98.api.assembler.ProdutoModelAssembler;
 import com.github.fmanuel98.api.disassembler.ProdutoInputDisassembler;
 import com.github.fmanuel98.api.model.ProdutoModel;
 import com.github.fmanuel98.api.model.input.ProdutoInput;
-import com.github.fmanuel98.domain.models.Produto;
 import com.github.fmanuel98.domain.repositories.ProdutoRepository;
 import com.github.fmanuel98.domain.services.ProdutoService;
 
