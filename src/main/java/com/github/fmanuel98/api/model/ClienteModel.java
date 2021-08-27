@@ -12,7 +12,7 @@ public class ClienteModel extends RepresentationModel<ClienteModel> {
   private Long id;
   private String nome;
   private String email;
-  private BigDecimal noney;
+  private BigDecimal money;
   private LocalDate createdAt;
   private LocalDate updatedAt;
 }

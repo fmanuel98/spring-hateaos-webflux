@@ -30,7 +30,7 @@ public class Cliente {
   @Column(length = 75, nullable = false)
   private String email;
   @Column(nullable = false)
-  private BigDecimal noney;
+  private BigDecimal money;
   @Column(nullable = false, updatable = false)
   @CreationTimestamp
   private LocalDate createdAt;

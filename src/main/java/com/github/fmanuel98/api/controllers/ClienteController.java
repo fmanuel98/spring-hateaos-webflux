@@ -1,14 +1,11 @@
 package com.github.fmanuel98.api.controllers;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import com.github.fmanuel98.api.assembler.ClienteModelAssembler;
 import com.github.fmanuel98.api.disassembler.ClienteInputDisassembler;
 import com.github.fmanuel98.api.model.ClienteModel;
 import com.github.fmanuel98.api.model.input.ClienteInput;
-import com.github.fmanuel98.domain.models.Cliente;
 import com.github.fmanuel98.domain.repositories.ClienteRepository;
 
 import org.springframework.hateoas.CollectionModel;

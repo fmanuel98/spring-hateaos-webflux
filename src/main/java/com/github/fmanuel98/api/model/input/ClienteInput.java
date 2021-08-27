@@ -3,6 +3,7 @@ package com.github.fmanuel98.api.model.input;
 import java.math.BigDecimal;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
@@ -16,5 +17,6 @@ public class ClienteInput {
   @Size(min = 10, max = 75)
   private String email;
   @Positive
-  private BigDecimal noney;
+  @NotNull
+  private BigDecimal money;
 }
