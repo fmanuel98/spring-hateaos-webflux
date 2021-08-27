@@ -27,6 +27,8 @@ public class Cliente {
   private Long id;
   @Column(length = 25, nullable = false)
   private String nome;
+  @Column(length = 75, nullable = false)
+  private String email;
   @Column(nullable = false)
   private BigDecimal noney;
   @Column(nullable = false, updatable = false)

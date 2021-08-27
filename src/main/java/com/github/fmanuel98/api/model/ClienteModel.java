@@ -8,12 +8,11 @@ import org.springframework.hateoas.RepresentationModel;
 import lombok.Data;
 
 @Data
-public class ProdutoModel extends RepresentationModel<ProdutoModel> {
+public class ClienteModel extends RepresentationModel<ClienteModel> {
   private Long id;
   private String nome;
-  private BigDecimal preco;
-  private Integer quantidade;
-  private LocalDate dataExpiracao;
+  private String email;
+  private BigDecimal noney;
   private LocalDate createdAt;
   private LocalDate updatedAt;
 }

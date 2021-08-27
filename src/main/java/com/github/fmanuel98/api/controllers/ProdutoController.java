@@ -37,16 +37,18 @@ public class ProdutoController {
   }
 
   @PostMapping
-  public Produto salvar(@Valid @RequestBody ProdutoInput produtoInput) {
+  public ProdutoModel salvar(@Valid @RequestBody ProdutoInput produtoInput) {
     var produto = disassembler.toDomainObject(produtoInput);
-    return service.salvar(produto);
+    produto = service.salvar(produto);
+    return assembler.toModel(produto);
   }
 
   @PutMapping("/{produtoId}")
-  public Produto actualizar(@Valid @RequestBody ProdutoInput produtoInput, @PathVariable Long produtoId) {
+  public ProdutoModel actualizar(@Valid @RequestBody ProdutoInput produtoInput, @PathVariable Long produtoId) {
     var produtoReal = service.buscarOrFalhar(produtoId);
     disassembler.copyToDomainObject(produtoInput, produtoReal);
-    return service.salvar(produtoReal);
+    produtoReal = service.salvar(produtoReal);
+    return assembler.toModel(produtoReal);
   }
 
 }

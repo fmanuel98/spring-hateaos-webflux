@@ -9,8 +9,9 @@ Projecto desenvolvido com o objectivo de aprofundar na aplicação de **hateaos*
 ---
 - [x] **Root EntryPoint**
 - [x] Crud de Produto
- - [] hateoas de recurso de produto
-  - [x] get
+  - [x] hateoas de recurso de produto
+  - [x] hateoas de recurso de produto
+  - [ ] get
 
 
 
