@@ -1,5 +1,21 @@
 package com.github.fmanuel98.api.model;
 
-public class CompraModel {
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
 
+import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
+
+import lombok.Data;
+
+@Data
+@Relation(collectionRelation = "compras")
+public class CompraModel extends RepresentationModel<CompraModel> {
+  private Long id;
+  private List<ItemCompraModel> itemsCompra;
+  private ClienteModel cliente;
+  private BigDecimal total;
+  private LocalDate createdAt;
+  private LocalDate updatedAt;
 }

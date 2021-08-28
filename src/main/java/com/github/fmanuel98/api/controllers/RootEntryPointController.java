@@ -18,6 +18,7 @@ public class RootEntryPointController {
     var rootEntryPointModel = new RootEntryPointModel();
     rootEntryPointModel.add(links.linkToProdutos("produtos"));
     rootEntryPointModel.add(links.linkToClientes("clientes"));
+    rootEntryPointModel.add(links.linkToCompras("compras"));
     return rootEntryPointModel;
   }
 

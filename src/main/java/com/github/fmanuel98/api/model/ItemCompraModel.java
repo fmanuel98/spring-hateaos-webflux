@@ -3,14 +3,15 @@ package com.github.fmanuel98.api.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
+
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class ItemCompraModel {
+@Relation(collectionRelation = "itens_compras")
+public class ItemCompraModel extends RepresentationModel<ItemCompraModel> {
   private Long id;
-  @EqualsAndHashCode.Include
   private ProdutoModel produto;
   private CompraModel compra;
   private String nomeProduto;
