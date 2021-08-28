@@ -1,4 +1,6 @@
-package ao.sender.api.comunication;
+package com.github.fmanuel98;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,6 +10,7 @@ class ComunicationApplicationTests {
 
 	@Test
 	void contextLoads() {
+		assertFalse(true);
 	}
 
 }
