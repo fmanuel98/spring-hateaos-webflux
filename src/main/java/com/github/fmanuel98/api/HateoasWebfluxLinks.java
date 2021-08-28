@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class HateoasWebfluxLinks {
 
   public Link linkToProdutos(String rel) {
-    return linkTo(ProdutoController.class).withRel(rel);
+    return linkTo(ProdutoController.class).withRel(rel).withType("GET");
   }
 
   public Link linkToProdutos() {

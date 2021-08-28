@@ -23,7 +23,7 @@ public class ClienteModelAssembler extends RepresentationModelAssemblerSupport<C
   }
 
   public ClienteModel toModel(Cliente cliente) {
-    ClienteModel produtoModel = createModelWithId(cliente.getId(), cliente);
+    ClienteModel produtoModel = createModelWithId(cliente.getId(), cliente, "GET", "ACTIO");
     mapper.map(cliente, produtoModel);
     produtoModel.add(webfluxLinks.linkToProdutos("clientes"));
     return produtoModel;

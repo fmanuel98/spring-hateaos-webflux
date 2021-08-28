@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  postgres_cadastro:
+    container_name: spring_hateoas
+    image: postgres:13.2
+    environment: 
+      POSTGRES_USER: hateoas
+      POSTGRES_PASSWORD: hateoas
+    ports:
+      - "5432:5432"
