@@ -2,8 +2,8 @@ package com.github.fmanuel98.api.disassembler;
 
 import com.github.fmanuel98.api.model.input.CompraInput;
 import com.github.fmanuel98.domain.models.Compra;
+import com.github.fmanuel98.domain.services.ClienteService;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
@@ -11,13 +11,13 @@ import lombok.AllArgsConstructor;
 @Component
 @AllArgsConstructor
 public class CompraInputDisassembler {
-  private ModelMapper mapper;
+  private ClienteService clienteService;
 
   public Compra toDomainObject(CompraInput compraInput) {
-    return mapper.map(compraInput, Compra.class);
+    var compra = new Compra();
+    var cliente = clienteService.buscarOrFalhar(compraInput.getClienteId());
+    compra.setCliente(cliente);
+    return compra;
   }
 
-  public void copyToDomainObject(CompraInput compraInput, Compra produto) {
-    mapper.map(compraInput, produto);
-  }
 }

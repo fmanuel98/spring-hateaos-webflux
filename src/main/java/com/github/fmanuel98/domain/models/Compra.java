@@ -11,6 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PostLoad;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -32,7 +35,6 @@ public class Compra {
   private List<ItemCompra> itemsCompra;
   @ManyToOne(optional = false)
   private Cliente cliente;
-  @Column(nullable = false)
   private BigDecimal total;
   @Column(nullable = false, updatable = false)
   @CreationTimestamp
@@ -40,4 +42,11 @@ public class Compra {
   @Column(nullable = false)
   @UpdateTimestamp
   private LocalDate updatedAt;
+
+  @PostLoad
+  @PreUpdate
+  public void calcularTotal() {
+    var total = this.itemsCompra.stream().map(ItemCompra::getSubTotal).reduce(BigDecimal.ZERO, BigDecimal::add);
+    this.setTotal(total);
+  }
 }
