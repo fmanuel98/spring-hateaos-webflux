@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
@@ -30,7 +31,7 @@ public class Compra {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @EqualsAndHashCode.Include
   private Long id;
-  @OneToMany(mappedBy = "compra", cascade = CascadeType.MERGE)
+  @OneToMany(mappedBy = "compra", cascade = { CascadeType.MERGE, CascadeType.PERSIST })
   private List<ItemCompra> itemsCompra;
   @ManyToOne(optional = false)
   private Cliente cliente;
@@ -43,10 +44,12 @@ public class Compra {
   private LocalDate updatedAt;
 
   @PreUpdate
+  @PrePersist
   public void calcularTotal() {
-    System.err.println(this.itemsCompra);
-    var total = this.itemsCompra.stream().map(ItemCompra::getSubTotal).reduce(BigDecimal.ZERO, BigDecimal::add);
-    System.out.println("compra total " + total);
+    var total = this.itemsCompra.stream().map(i -> {
+      i.calcularSubTotal();
+      return i.getSubTotal();
+    }).reduce(BigDecimal.ZERO, BigDecimal::add);
     this.setTotal(total);
   }
 }

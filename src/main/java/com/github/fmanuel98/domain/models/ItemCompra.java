@@ -32,7 +32,7 @@ public class ItemCompra {
   @ManyToOne(optional = false, cascade = CascadeType.MERGE)
   @EqualsAndHashCode.Include
   private Produto produto;
-  @ManyToOne(optional = false, cascade = { CascadeType.MERGE })
+  @ManyToOne(optional = false)
   private Compra compra;
   @Column(nullable = false)
   private BigDecimal precoProduto;

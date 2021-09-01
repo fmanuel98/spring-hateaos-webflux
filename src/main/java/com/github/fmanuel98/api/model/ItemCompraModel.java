@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Relation(collectionRelation = "itens_compras")
+@Relation(collectionRelation = "item_compra")
 public class ItemCompraModel extends RepresentationModel<ItemCompraModel> {
   private Long id;
   private Produto produto;

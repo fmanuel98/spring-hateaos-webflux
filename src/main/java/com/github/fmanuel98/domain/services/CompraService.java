@@ -1,10 +1,11 @@
 package com.github.fmanuel98.domain.services;
 
+import java.math.BigDecimal;
+
 import com.github.fmanuel98.domain.models.Compra;
 import com.github.fmanuel98.domain.models.ItemCompra;
 import com.github.fmanuel98.domain.models.Produto;
 import com.github.fmanuel98.domain.repositories.CompraRepository;
-import com.github.fmanuel98.domain.repositories.ItemCompraRepository;
 
 import org.springframework.stereotype.Service;
 
@@ -16,17 +17,15 @@ import lombok.extern.slf4j.Slf4j;
 @AllArgsConstructor
 public class CompraService {
   private CompraRepository repository;
-  private ItemCompraRepository itemCompraRepository;
 
   public Compra salvar(Compra compra) {
-    final var compraReal = repository.save(compra);
-    compra.getItemsCompra().forEach(item -> {
+    final var compraReal = compra;
+    compraReal.getItemsCompra().forEach(item -> {
       item.setCompra(compraReal);
       var produto = verificarQuantidadeEmStock(item);
       item.setProduto(produto);
-      itemCompraRepository.save(item);
-
     });
+    repository.save(compraReal);
     return compraReal;
   }
 
@@ -41,4 +40,5 @@ public class CompraService {
     produto.setQuantidade(quantidadeRestante);
     return produto;
   }
+
 }

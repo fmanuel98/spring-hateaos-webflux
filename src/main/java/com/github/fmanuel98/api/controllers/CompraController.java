@@ -38,11 +38,11 @@ public class CompraController {
   @PostMapping
   public CompraModel salvar(// @Valid @RequestBody CompraInput compraInput
   ) {
-    var quantidade = 50;
+    var quantidade = 1;
     var item1 = new ItemCompraInput();
     item1.setProdutoId(1L);
     item1.setQuantidade(quantidade);
-    quantidade += 50;
+    quantidade += 1;
     var itemReal1 = itemCompraInputDisassembler.toDomainObject(item1);
     var item2 = new ItemCompraInput();
     item2.setProdutoId(2L);
