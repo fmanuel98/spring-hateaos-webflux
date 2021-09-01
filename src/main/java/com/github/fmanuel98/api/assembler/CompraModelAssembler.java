@@ -23,10 +23,10 @@ public class CompraModelAssembler extends RepresentationModelAssemblerSupport<Co
   }
 
   public CompraModel toModel(Compra compra) {
-    CompraModel produtoModel = createModelWithId(compra.getId(), compra);
-    mapper.map(compra, produtoModel);
-    produtoModel.add(webfluxLinks.linkToCompras("compras"));
-    return produtoModel;
+    CompraModel compraModel = createModelWithId(compra.getId(), compra);
+    mapper.map(compra, compraModel);
+    compraModel.add(webfluxLinks.linkToCompras("compras"));
+    return compraModel;
   }
 
   @Override

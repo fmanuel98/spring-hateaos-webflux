@@ -7,9 +7,11 @@ import java.util.List;
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Relation(collectionRelation = "compras")
 public class CompraModel extends RepresentationModel<CompraModel> {
   private Long id;

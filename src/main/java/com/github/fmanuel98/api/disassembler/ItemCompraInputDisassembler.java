@@ -1,7 +1,9 @@
 package com.github.fmanuel98.api.disassembler;
 
 import com.github.fmanuel98.api.model.input.ItemCompraInput;
+import com.github.fmanuel98.domain.models.Cliente;
 import com.github.fmanuel98.domain.models.ItemCompra;
+import com.github.fmanuel98.domain.services.ProdutoService;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -12,12 +14,19 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ItemCompraInputDisassembler {
   private ModelMapper mapper;
+  private ProdutoService serviceProdutoService;
 
   public ItemCompra toDomainObject(ItemCompraInput itemCompraInput) {
-    return mapper.map(itemCompraInput, ItemCompra.class);
+    var produto = serviceProdutoService.buscarOrFalhar(itemCompraInput.getProdutoId());
+    int quantidadeDesejada = itemCompraInput.getQuantidade();
+    var item = new ItemCompra();
+    item.setQuantidade(quantidadeDesejada);
+    item.setProduto(produto);
+    item.setPrecoProduto(produto.getPreco());
+    return item;
   }
 
-  public void copyToDomainObject(ItemCompraInput itemCompraInput, ItemCompra produto) {
-    mapper.map(itemCompraInput, produto);
+  public void copyToDomainObject(ItemCompraInput clienteInput, Cliente cliente) {
+    mapper.map(clienteInput, cliente);
   }
 }

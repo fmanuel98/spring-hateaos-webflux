@@ -17,6 +17,6 @@ public class ProdutoService {
   }
 
   public Produto buscarOrFalhar(Long produtoId) {
-    return repository.findById(produtoId).orElseThrow(() -> new NullPointerException(""));
+    return repository.findById(produtoId).orElseThrow(() -> new NullPointerException("jhhhhhhhhhhhhhhh"));
   }
 }

@@ -52,7 +52,6 @@ public class ItemCompra {
   @PreUpdate
   public void calcularSubTotal() {
     var subTotal = this.precoProduto.multiply(BigDecimal.valueOf(this.quantidade));
-    System.out.println("ItemCompra.calcularSubTotal()" + subTotal);
     this.setSubTotal(subTotal);
   }
 }
