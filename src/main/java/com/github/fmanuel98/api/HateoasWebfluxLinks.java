@@ -1,6 +1,7 @@
 package com.github.fmanuel98.api;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import com.github.fmanuel98.api.controllers.ClienteController;
 import com.github.fmanuel98.api.controllers.CompraController;
@@ -30,7 +31,11 @@ public class HateoasWebfluxLinks {
   }
 
   public Link linkToCompras(String rel) {
-    return linkTo(CompraController.class).withRel(rel);
+    return linkTo(ClienteController.class).withRel(rel);
+  }
+
+  public Link linkToProdutoMaisVendidos() {
+    return linkTo(methodOn(CompraController.class).produtosMaisVendidos()).withRel("produtos-mais-vendidos");
   }
 
   public Link linkToCompras() {

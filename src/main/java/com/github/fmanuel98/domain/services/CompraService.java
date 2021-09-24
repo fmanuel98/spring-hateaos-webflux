@@ -1,6 +1,6 @@
 package com.github.fmanuel98.domain.services;
 
-import java.math.BigDecimal;
+import java.util.List;
 
 import com.github.fmanuel98.domain.models.Compra;
 import com.github.fmanuel98.domain.models.ItemCompra;
@@ -39,6 +39,11 @@ public class CompraService {
     }
     produto.setQuantidade(quantidadeRestante);
     return produto;
+  }
+
+  public final List<Produto> produtoMaisVendidos() {
+    // TODO depois impleme
+    return List.of(new Produto());
   }
 
 }
