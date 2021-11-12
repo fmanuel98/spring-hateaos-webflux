@@ -1,20 +1,19 @@
 package com.github.fmanuel98;
 
+import java.util.TimeZone;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
-import java.util.TimeZone;
-
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "APIs", version = "1.0", description = "Documentation APIs v1.0"))
+@OpenAPIDefinition(info = @Info(title = "REST API para venda de Produtos", version = "1.0", description = "API criada com o objectivo de apender sobre Open API e Web Flux"))
 public class HateoasWebflux {
 
 	public static void main(String[] args) {
 		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
 		SpringApplication.run(HateoasWebflux.class, args);
 	}
-
 }

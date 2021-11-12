@@ -1,5 +1,7 @@
 package com.github.fmanuel98.api.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import com.github.fmanuel98.api.assembler.ProdutoModelAssembler;
@@ -9,7 +11,6 @@ import com.github.fmanuel98.api.model.input.ProdutoInput;
 import com.github.fmanuel98.domain.repositories.ProdutoRepository;
 import com.github.fmanuel98.domain.services.ProdutoService;
 
-import org.springframework.hateoas.CollectionModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +31,7 @@ public class ProdutoController {
   private ProdutoModelAssembler assembler;
 
   @GetMapping
-  public CollectionModel<ProdutoModel> listar() {
+  public List<ProdutoModel> listar() {
     var produtos = repository.findAll();
     return assembler.toCollectionModel(produtos);
   }

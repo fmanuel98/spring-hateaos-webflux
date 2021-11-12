@@ -1,5 +1,7 @@
 package com.github.fmanuel98.api.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import com.github.fmanuel98.api.assembler.ClienteModelAssembler;
@@ -8,7 +10,6 @@ import com.github.fmanuel98.api.model.ClienteModel;
 import com.github.fmanuel98.api.model.input.ClienteInput;
 import com.github.fmanuel98.domain.repositories.ClienteRepository;
 
-import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +29,7 @@ public class ClienteController {
   private ClienteModelAssembler assembler;
 
   @GetMapping
-  public CollectionModel<ClienteModel> listar() {
+  public List<ClienteModel> listar() {
     var clientes = repository.findAll();
     return assembler.toCollectionModel(clientes);
   }
