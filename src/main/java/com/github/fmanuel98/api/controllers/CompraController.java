@@ -3,7 +3,7 @@ package com.github.fmanuel98.api.controllers;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import com.github.fmanuel98.api.assembler.CompraModelAssembler;
 import com.github.fmanuel98.api.disassembler.CompraInputDisassembler;

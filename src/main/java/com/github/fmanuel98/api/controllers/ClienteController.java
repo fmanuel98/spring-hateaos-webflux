@@ -2,7 +2,7 @@ package com.github.fmanuel98.api.controllers;
 
 import java.util.List;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import com.github.fmanuel98.api.assembler.ClienteModelAssembler;
 import com.github.fmanuel98.api.disassembler.ClienteInputDisassembler;
